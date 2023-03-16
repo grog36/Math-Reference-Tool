@@ -1,0 +1,50 @@
+/* Gregory Ecklund */
+/* March 2023 */
+
+/* Background Color */
+body {
+    background-color: rgba(255, 255, 0, .6);
+}
+
+
+/* Column Formatting */
+.ALLCOLUMNS {
+    display: flex;
+}
+.COLUMN2, .COLUMN3 {
+    margin-left: 2%;
+}
+
+/*All Tables */
+table {
+    border-spacing: 0px;
+}
+table > tbody > tr > td, table > caption {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 5px;
+    border-spacing: inherit;
+    margin: 0px;
+}
+
+/* Repeating Decimals */
+td > span {
+    text-decoration: overline;
+}
+
+/* Unit Fractions Table */
+.unitFractionsTable > table, .unitFractionsTable > table > caption {
+    background-color: silver;
+}
+
+/* Logs Table */
+.logsTable > table, .logsTable > table > caption {
+    background-color: fuchsia;
+}
+
+/* Natural Logs Table */
+.naturalLogsTable > table, .naturalLogsTable > table > caption {
+    background-color: lawngreen;
+}
+
