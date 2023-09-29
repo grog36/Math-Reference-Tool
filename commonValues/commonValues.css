@@ -4,6 +4,7 @@
 /* Background Color */
 body {
     background-color: rgba(255, 255, 0, .6);
+    font-size: 14px;
 }
 
 
@@ -11,7 +12,7 @@ body {
 .ALLCOLUMNS {
     display: flex;
 }
-.COLUMN2, .COLUMN3 {
+.COLUMN2, .COLUMN3, .COLUMN4 {
     margin-left: 2%;
 }
 
@@ -26,6 +27,10 @@ table > tbody > tr > td, table > caption {
     padding: 5px;
     border-spacing: inherit;
     margin: 0px;
+}
+table > caption {
+    font-weight: bolder;
+    font-size: 20px;
 }
 
 /* Repeating Decimals */
@@ -48,3 +53,62 @@ td > span {
     background-color: lawngreen;
 }
 
+/* Exponent Table */
+.exponentsTable > table, .exponentsTable > table > caption {
+    background-color: lightblue;
+    text-align: center;
+}
+.SUB-TITLES {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+
+
+
+/* Navbar */
+.navbar {
+    overflow: hidden;
+    margin-bottom: 2%;
+}
+/* Navbar Elements */
+.navbar a {
+    float: left;
+    text-decoration: none;
+}
+/* Navbar Dropdown Containers */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+/* Change Background Color on Hover */
+.navbar a:hover, .dropdown:hover .dropdownLabel {
+    background-color: lightyellow;
+}
+/* Dropdown Div */
+.dropdownLinks {
+    display: none;
+    position: absolute;
+}
+/* Dropdown Options */
+.dropdownLinks a {
+    float: none;
+    display: block;
+}
+/* Display Dropdown Options on Hover */
+.dropdown:hover .dropdownLinks {
+    display: block;
+}
+/* Background Color and Border */
+.navbar a, .dropdownLabel {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: pink;
+    padding: 15px;
+    font-size: 16spx;
+    color: black;
+    text-align: left;
+}
