@@ -1,47 +1,40 @@
 /* Gregory Ecklund */
-/* March 2023 */
+/* March 2024 */
 
-
-
-
-
-
-
-
-/* Navbar */
+/* NAVBAR */
 .navbar {
     overflow: hidden;
     margin-bottom: 2%;
 }
-/* Navbar Elements */
+/* NAVBAR ELEMENTS */
 .navbar a {
     float: left;
     text-decoration: none;
 }
-/* Navbar Dropdown Containers */
+/* NAVBAR DROPDOWN CONTAINERS */
 .dropdown {
     float: left;
     overflow: hidden;
 }
-/* Change Background Color on Hover */
+/* CHANGE BACKGROUND COLOR ON HOVER */
 .navbar a:hover, .dropdown:hover .dropdownLabel {
     background-color: lightyellow;
 }
-/* Dropdown Div */
+/* DROPDOWN DIV */
 .dropdownLinks {
     display: none;
     position: absolute;
 }
-/* Dropdown Options */
+/* DROPDOWN OPTIONS */
 .dropdownLinks a {
     float: none;
     display: block;
 }
-/* Display Dropdown Options on Hover */
+/* DISPLAY DROPDOWN OPTIONS ON HOVER */
 .dropdown:hover .dropdownLinks {
     display: block;
 }
-/* Background Color and Border */
+/* BACKGROUND COLOR AND BORDER */
 .navbar a, .dropdownLabel {
     border-style: solid;
     border-width: 1px;
@@ -51,4 +44,71 @@
     font-size: 16px;
     color: black;
     text-align: left;
+}
+
+/* BACKGROUND COLOR */
+body {
+    background-color: lightblue;
+}
+
+/* TIPS */
+.tips {
+    float: right;
+    color: black;
+    font-weight: bolder;
+    visibility: hidden;
+}
+
+/* START BUTTON & DIV */
+#startButtonAndSettingsDiv {
+    text-align: center;
+}
+#startButton {
+    background-color: springgreen;
+    padding: 15px;
+    font-size: 32px;
+}
+
+/* TIMER */
+.minutes {
+    display: flex;
+    flex: right;
+    visibility: hidden;
+    text-align: right;
+    font-size: large;
+    font-weight: bolder;
+    color: blue;
+}
+.seconds {
+    display: flex;
+    flex: left;
+    visibility: hidden;
+    text-align: right;
+    font-size: large;
+    font-weight: bolder;
+    color: blue;
+}
+
+/* QUESTIONS */
+.questions {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 34px;
+    visibility: hidden;
+}
+
+/* TEXT INPUT */
+.answerInputDiv {
+    text-align: center;
+    visibility: hidden;
+}
+
+/* RETRY BUTTON */
+.retryButtonDiv {
+    visibility: hidden;
+    text-align: center;
+}
+#retryButton {
+    font-size: 32px;
+    padding: 15px;
 }
