@@ -35,10 +35,29 @@
         <br>
         <label id = "gametypeLabel">Question Type: </label>
         <select id = "gametypeSelect">
+            <option>Squares of 1 Digit Numbers</option>
             <option>Squares of 2 Digit Numbers</option>
             <option>Squares of 3 Digit Numbers</option>
+            <option>Square Roots of 1 & 2 Digit Numbers</option>
             <option>Square Roots of 3 & 4 Digit Numbers</option>
             <option>Square Roots of 5 & 6 Digit Numbers</option>
+            <option>1 Digit by 1 Digit Multiplication</option>
+            <option>2 Digit by 1 Digit Multiplication</option>
+            <option>2 Digit by 2 Digit Multiplication</option>
+        </select>
+        <br>
+        <br>
+        <label id = "questionCountLabel">Question Count: </label>
+        <select id = "questionCountSelect">
+            <option>1</option>
+            <option>5</option>
+            <option>10</option>
+            <option>25</option>
+            <option>50</option>
+            <option>100</option>
+            <option>250</option>
+            <option>500</option>
+            <option>1000</option>
         </select>
     </div>
 
@@ -65,6 +84,15 @@
     <!-- ANSWER INPUT BAR -->
     <div class = "answerInputDiv">
         <input type = "text" id = "input" oninput = checkAnswer() autocomplete = "off">
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- CONTACT INFORMATION -->
+    <div id = "contactInformationDiv">
+        <p>If you encounter bugs, problems, or have any questions, feel free to email me at: gecklund1@catamount.wcu.edu</p>
     </div>
 
     <!-- RETRY BUTTON -->

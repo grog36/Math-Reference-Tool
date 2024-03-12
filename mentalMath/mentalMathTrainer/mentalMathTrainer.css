@@ -103,6 +103,11 @@ body {
     visibility: hidden;
 }
 
+/* CONTACT INFORMATION */
+#contactInformationDiv {
+    text-align: center;
+}
+
 /* RETRY BUTTON */
 .retryButtonDiv {
     visibility: hidden;

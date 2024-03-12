@@ -18,33 +18,75 @@ var currentAnswer;
 //STARTUP FUNCTION
 function start() {
     //SETS UP LIST DEPENDING ON CHOSEN GAMETYPE
+    questionCount = document.getElementById("questionCountSelect").value;
     switch (document.getElementById("gametypeSelect").value) {
+        case "Squares of 1 Digit Numbers":
+            for (let i = 0; i < questionCount; i++) {
+                let number = randomNumber(1, 9);
+                possibleQuestionsList.push(`${number}^2`);
+                possibleAnswersList.push(number * number);
+            }
+            break;
         case "Squares of 2 Digit Numbers":
-            for (let i = 10; i < 100; i++) {
-                possibleQuestionsList.push(i);
-                possibleAnswersList.push(i*i);
+            for (let i = 0; i < questionCount; i++) {
+                let number = randomNumber(10, 99);
+                possibleQuestionsList.push(`${number}^2`);
+                possibleAnswersList.push(number * number);
             }
             break;
         case "Squares of 3 Digit Numbers":
-            for (let i = 100; i < 1000; i++) {
-                possibleQuestionsList.push(i);
-                possibleAnswersList.push(i*i);
+            for (let i = 0; i < questionCount; i++) {
+                let number = randomNumber(100, 999);
+                possibleQuestionsList.push(`${number}^2`);
+                possibleAnswersList.push(number * number);
+            }
+            break;
+        case "Square Roots of 1 & 2 Digit Numbers":
+            for (let i = 0; i < questionCount; i++) {
+                let baseNumber = randomNumber(1, 9);
+                possibleQuestionsList.push(`sqrt(${baseNumber * baseNumber})`);
+                possibleAnswersList.push(baseNumber);
             }
             break;
         case "Square Roots of 3 & 4 Digit Numbers":
-            for (let i = 10; i < 100; i++) {
-                possibleQuestionsList.push(i*i);
-                possibleAnswersList.push(i);
+            for (let i = 0; i < questionCount; i++) {
+                let baseNumber = randomNumber(10, 99);
+                possibleQuestionsList.push(`sqrt(${baseNumber * baseNumber})`);
+                possibleAnswersList.push(baseNumber);
             }
             break;
         case "Square Roots of 5 & 6 Digit Numbers":
-            for (let i = 100; i < 1000; i++) {
-                possibleQuestionsList.push(i*i);
-                possibleAnswersList.push(i);
+            for (let i = 0; i < questionCount; i++) {
+                let baseNumber = randomNumber(100, 999);
+                possibleQuestionsList.push(`sqrt(${baseNumber * baseNumber})`);
+                possibleAnswersList.push(baseNumber);
+            }
+            break;
+        case "1 Digit by 1 Digit Multiplication":
+            for (let i = 0; i < questionCount; i++) {
+                let numberOne = randomNumber(1, 9);
+                let numberTwo = randomNumber(1, 9);
+                possibleQuestionsList.push(`${numberOne} x ${numberTwo}`);
+                possibleAnswersList.push(numberOne * numberTwo);
+            }
+            break;
+        case "2 Digit by 1 Digit Multiplication":
+            for (let i = 0; i < questionCount; i++) {
+                let numberOne = randomNumber(10, 99);
+                let numberTwo = randomNumber(1, 9);
+                possibleQuestionsList.push(`${numberOne} x ${numberTwo}`);
+                possibleAnswersList.push(numberOne * numberTwo);
+            }
+            break;
+        case "2 Digit by 2 Digit Multiplication":
+            for (let i = 0; i < questionCount; i++) {
+                let numberOne = randomNumber(10, 99);
+                let numberTwo = randomNumber(10, 99);
+                possibleQuestionsList.push(`${numberOne} x ${numberTwo}`);
+                possibleAnswersList.push(numberOne * numberTwo);
             }
             break;
     }
-    questionCount = possibleQuestionsList.length;
 
     //SETS DOCUMENT ELEMENT VISIBILITIES
     for (let element of timerList) {
@@ -116,7 +158,7 @@ function gameOver() {
         document.getElementById("retryButton").style.backgroundColor = "lightgreen";
     }
     else {
-        let loseText = `YOU LOSE! The answer was ${currentAnswer}.`;
+        let loseText = `YOU LOSE! The answer was ${currentAnswer}. `;
         loseText += `(${score} / ${questionCount})`;
         document.body.style.background = "red";
         document.getElementById("retryButton").style.backgroundColor = "crimson";
