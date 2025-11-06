@@ -86,6 +86,27 @@ function start() {
                 possibleAnswersList.push(numberOne * numberTwo);
             }
             break;
+        case "2x2 by 2x2 Matrix Multiplication":
+            for (let i = 0; i < questionCount; i++) {
+                //Matrix 1
+                let A1 = randomNumber(-5, 5);
+                let B1 = randomNumber(-5, 5);
+                let C1 = randomNumber(-5, 5);
+                let D1 = randomNumber(-5, 5);
+                //Matrix 2
+                let A2 = randomNumber(-5, 5);
+                let B2 = randomNumber(-5, 5);
+                let C2 = randomNumber(-5, 5);
+                let D2 = randomNumber(-5, 5);
+                //Solution Matrix
+                let A3 = (A1 * A2) + (B1 * C2);
+                let B3 = (A1 * B2) + (B1 * D2);
+                let C3 = (C1 * A2) + (D1 * C2);
+                let D3 = (C1 * B2) + (D1 * D2);
+                //Set values
+                possibleQuestionsList.push(`[${A1}, ${B1}][${A2}, ${B2}]<br>[${C1}, ${D1}][${C2}, ${D2}]`);
+                possibleAnswersList.push(`[[${A3}, ${B3}][${C3}, ${D3}]]`);
+            }
     }
 
     //SETS DOCUMENT ELEMENT VISIBILITIES
@@ -134,10 +155,21 @@ function checkAnswer() {
     if (input === "END") {
         gameOver();
     }
-
-    if (guess == currentAnswer) {
-        score++;
-        nextQuestion();
+    
+    //Checks if the answer is a matrix or number
+    if(typeof(currentAnswer) != typeof(1)) {
+        let formattedAnswer = currentAnswer.replace(/\s/g, '');
+        formattedAnswer = formattedAnswer.replace(/,/g, '');
+        if (guess == formattedAnswer) {
+            score++;
+            nextQuestion();
+        }
+    }
+    else {
+        if (guess == currentAnswer) {
+            score++;
+            nextQuestion();
+        }
     }
 }
 
